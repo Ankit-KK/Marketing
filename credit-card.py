@@ -101,13 +101,13 @@ fig_min_payments_credit_limit = px.box(data, x='CREDIT_LIMIT', y='MINIMUM_PAYMEN
                                        title='Minimum Payments by Credit Limit')
 fig_min_payments_credit_limit.update_layout(xaxis_title='Credit Limit', yaxis_title='Minimum Payments')
 
+import streamlit as st
+
 # Streamlit App
 st.title("Credit Card Analysis Dashboard")
 
 # Sidebar with options
-option = st.sidebar.selectbox('Choose a visualization', ['Credit Limits', 'Balance vs Purchases', 'Payments Analysis', 'Purchases by Tenure', 'Balance Frequency', 'One-Off vs Installments', 'Cash Advance', 'Purchase Frequency', 'Correlation Heatmap', 'Payments by Tenure', 'Minimum Payments'])
-
-
+option = st.sidebar.radio('Choose a visualization', ['Credit Limits', 'Balance vs Purchases', 'Payments Analysis', 'Purchases by Tenure', 'Balance Frequency', 'One-Off vs Installments', 'Cash Advance', 'Purchase Frequency', 'Correlation Heatmap', 'Payments by Tenure', 'Minimum Payments'])
 
 # Render selected visualization
 if option == 'Credit Limits':
@@ -138,4 +138,5 @@ elif option == 'Payments by Tenure':
     st.plotly_chart(fig_payments_tenure)
 elif option == 'Minimum Payments':
     st.plotly_chart(fig_min_payments)
+
 
