@@ -16,7 +16,7 @@ fig_corr_heatmap = px.imshow(correlation_matrix, text_auto=True, title='Correlat
 fig_payments_tenure = px.line(data, x='TENURE', y='PAYMENTS', title='Payments by Tenure').update_layout(height=600, width=800)
 fig_min_payments = px.histogram(data, x='MINIMUM_PAYMENTS', nbins=10, title='Distribution of Minimum Payments')
 
-#Distribution of Credit Limit
+# Distribution of Credit Limit
 fig_credit_limit = px.histogram(data, x='CREDIT_LIMIT', nbins=30, title='Distribution of Credit Limit')
 fig_credit_limit.update_layout(xaxis_title='Credit Limit', yaxis_title='Count')
 
@@ -116,10 +116,11 @@ elif option == 'Balance vs Purchases':
     st.plotly_chart(fig_balance_vs_purchases)
 elif option == 'Payments Analysis':
     st.subheader("Payments Analysis")
-    st.plotly_chart(fig_payments_by_tenure)
-    st.plotly_chart(fig_full_payment_proportion)
-    st.plotly_chart(fig_payments_histogram)
-    st.plotly_chart(fig_min_payments_credit_limit)
+    col1, col2 = st.columns(2)
+    col1.plotly_chart(fig_payments_by_tenure)
+    col2.plotly_chart(fig_full_payment_proportion)
+    col1.plotly_chart(fig_payments_histogram)
+    col2.plotly_chart(fig_min_payments_credit_limit)
 elif option == 'Purchases by Tenure':
     st.plotly_chart(fig_total_purchases_tenure)
 elif option == 'Balance Frequency':
@@ -128,8 +129,9 @@ elif option == 'One-Off vs Installments':
     st.plotly_chart(fig_oneoff_vs_installments)
 elif option == 'Cash Advance':
     st.subheader("Cash Advance Analysis")
-    st.plotly_chart(fig_cash_advance_freq)
-    st.plotly_chart(fig_cash_advance_trx)
+    col1, col2 = st.columns(2)
+    col1.plotly_chart(fig_cash_advance_freq)
+    col2.plotly_chart(fig_cash_advance_trx)
 elif option == 'Purchase Frequency':
     st.plotly_chart(fig_purchase_freq)
 elif option == 'Correlation Heatmap':
@@ -138,5 +140,3 @@ elif option == 'Payments by Tenure':
     st.plotly_chart(fig_payments_tenure)
 elif option == 'Minimum Payments':
     st.plotly_chart(fig_min_payments)
-
-
