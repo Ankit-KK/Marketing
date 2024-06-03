@@ -12,7 +12,7 @@ fig_cash_advance_freq = px.histogram(data, x='CASH_ADVANCE_FREQUENCY', nbins=20,
 fig_cash_advance_trx = px.histogram(data, x='CASH_ADVANCE_TRX', nbins=20, title='Distribution of Cash Advance Transactions')
 fig_purchase_freq = px.density_heatmap(data, x='PURCHASES_FREQUENCY', y='PURCHASES_INSTALLMENTS_FREQUENCY', title='Purchase Frequency vs Installments Frequency', nbinsx=16, nbinsy=16)
 correlation_matrix = data.corr(numeric_only=True)
-fig_corr_heatmap = px.imshow(correlation_matrix, text_auto=True, title='Correlation Heatmap', width=1500, height=1500)
+fig_corr_heatmap = px.imshow(correlation_matrix, text_auto=True, title='Correlation Heatmap', width=500, height=500)
 fig_payments_tenure = px.line(data, x='TENURE', y='PAYMENTS', title='Payments by Tenure').update_layout(height=600, width=800)
 fig_min_payments = px.histogram(data, x='MINIMUM_PAYMENTS', nbins=10, title='Distribution of Minimum Payments')
 
