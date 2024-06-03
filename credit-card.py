@@ -10,9 +10,9 @@ fig_balance_freq = px.histogram(data, x='BALANCE_FREQUENCY', nbins=14, title='Di
 fig_oneoff_vs_installments = px.scatter(data, x='ONEOFF_PURCHASES', y='INSTALLMENTS_PURCHASES', title='One-Off vs Installment Purchases', trendline='ols')
 fig_cash_advance_freq = px.histogram(data, x='CASH_ADVANCE_FREQUENCY', nbins=20, title='Distribution of Cash Advance Frequency')
 fig_cash_advance_trx = px.histogram(data, x='CASH_ADVANCE_TRX', nbins=20, title='Distribution of Cash Advance Transactions')
-fig_purchase_freq = px.density_heatmap(data, x='PURCHASES_FREQUENCY', y='PURCHASES_INSTALLMENTS_FREQUENCY', title='Purchase Frequency vs Installments Frequency', nbinsx=15, nbinsy=15)
+fig_purchase_freq = px.density_heatmap(data, x='PURCHASES_FREQUENCY', y='PURCHASES_INSTALLMENTS_FREQUENCY', title='Purchase Frequency vs Installments Frequency', nbinsx=16, nbinsy=16)
 correlation_matrix = data.corr(numeric_only=True)
-fig_corr_heatmap = px.imshow(correlation_matrix, text_auto=True, title='Correlation Heatmap', width=1500, height=1500)
+fig_corr_heatmap = px.imshow(correlation_matrix, text_auto=True, title='Correlation Heatmap', width=1800, height=1800)
 fig_payments_tenure = px.line(data, x='TENURE', y='PAYMENTS', title='Payments by Tenure').update_layout(height=600, width=800)
 fig_min_payments = px.histogram(data, x='MINIMUM_PAYMENTS', nbins=10, title='Distribution of Minimum Payments')
 
